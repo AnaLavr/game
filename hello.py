@@ -11,8 +11,8 @@ def start():
     in a secret space mission. Departure this night."""
 
     choices = [
-        ('hell_yes',"Hello yes"),
-        ('hell_no',"Hello no")
+        ('hell_yes',"Hell yes"),
+        ('hell_no',"Hell no")
     ]
 
     return render_template('adventure.html', title=title, text=text, choices=choices)
@@ -30,8 +30,9 @@ def hell_yes():
         ('callyourmom',"Call your mom"),
         ('adios',"Leave this planet. Laugh at everyone's surprised face, when they find out where you are ")
     ]
-
-    return render_template('adventure.html', title=title, text=text, choices=choices)
+    
+    
+    return render_template('hellyes.html', title=title, text=text, choices=choices, )
 
 @app.route("/youareout")
 def hell_no():
@@ -41,7 +42,7 @@ def hell_no():
 
     choices = []
 
-    return render_template('adventure.html', title=title, text=text, choices=choices)
+    return render_template('hellno.html', title=title, text=text, choices=choices)
 
 
 
@@ -54,7 +55,7 @@ def callyourmom():
 
     choices = []
 
-    return render_template('adventure.html', title=title, text=text, choices=choices)
+    return render_template('mom.html', title=title, text=text, choices=choices)
 
 @app.route("/byeearth")
 def adios():
@@ -64,4 +65,4 @@ def adios():
 
     choices = []
 
-    return render_template('adventure.html', title=title, text=text, choices=choices)
+    return render_template('adios.html', title=title, text=text, choices=choices)
